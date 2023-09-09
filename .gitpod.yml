@@ -8,3 +8,13 @@ github:
     pullRequests: false
     addCheck: false
     addComment: false
+
+tasks:
+  - name: Initialize Bazel
+    init: ln -sf /workspace/go/bin/bazelisk /workspace/go/bin/bazel && bazel --version && exit
+
+  - name: Initialize Trunk
+    init: trunk install && trunk upgrade && exit
+
+  - name: Build Gazelle
+    init: bazelisk build //:gazelle && exit
