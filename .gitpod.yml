@@ -1,0 +1,10 @@
+image:
+  file: /.gitpod/Dockerfile
+
+github:
+  prebuilds:
+    master: true
+    branches: false
+    pullRequests: false
+    addCheck: false
+    addComment: false
