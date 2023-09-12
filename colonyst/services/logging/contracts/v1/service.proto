@@ -1,0 +1,13 @@
+syntax = "proto3";
+package logging_v1;
+option go_package = "github.com/calebzmeyer/monorepo/colonyst/services/logging/contracts/v1";
+
+import "colonyst/services/logging/contracts/v1/game_event.proto";
+import "colonyst/services/logging/contracts/v1/game_finish.proto";
+import "colonyst/services/logging/contracts/v1/game_start.proto";
+
+service GameLoggingService {
+    rpc LogGameStart(LogGameStartRequest) returns (LogGameStartResponse);
+    rpc LogGameEvent(LogGameEventRequest) returns (LogGameEventResponse);
+    rpc LogGameFinish(LogGameFinishRequest) returns (LogGameFinishResponse);
+}

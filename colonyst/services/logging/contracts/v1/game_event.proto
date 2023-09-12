@@ -1,0 +1,11 @@
+syntax = "proto3";
+package logging_v1;
+option go_package = "github.com/calebzmeyer/monorepo/colonyst/services/logging/contracts/v1";
+
+message LogGameEventRequest {
+
+}
+
+message LogGameEventResponse {
+
+}
