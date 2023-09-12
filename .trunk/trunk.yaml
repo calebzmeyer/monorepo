@@ -18,10 +18,10 @@ lint:
   enabled:
     # General
     - git-diff-check
-    - trufflehog@3.54.3
+    - trufflehog@3.55.1
 
     # Bazel
-    - buildifier@6.3.2
+    - buildifier@6.3.3
 
     # Docker
     - hadolint@2.12.0
@@ -35,6 +35,7 @@ lint:
   disabled:
     - checkov
     - terrascan
+    - trivy
     - yamllint
 
 actions:
