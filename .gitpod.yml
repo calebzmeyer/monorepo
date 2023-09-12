@@ -11,10 +11,21 @@ github:
 
 tasks:
   - name: Initialize Bazel
-    init: ln -sf /workspace/go/bin/bazelisk /workspace/go/bin/bazel && bazel --version && exit
+    init: >
+      bazelisk --version &&
+      ln -sf /workspace/go/bin/bazelisk /workspace/go/bin/bazel &&
+      bazel --version &&
+      exit &&
+      gp sync-done INITIALIZE_BAZEL
 
   - name: Initialize Trunk
-    init: trunk install && trunk upgrade && exit
+    init: >
+      trunk install &&
+      trunk upgrade &&
+      exit
 
   - name: Build Gazelle
-    init: bazelisk build //:gazelle && exit
+    init: >
+      gp sync-await INITIALIZE_BAZEL &&
+      bazelisk build //:gazelle &&
+      exit
